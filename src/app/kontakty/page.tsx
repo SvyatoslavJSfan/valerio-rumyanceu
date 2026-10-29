@@ -31,7 +31,6 @@ export default function ContactsPage() {
               <span>{site.region}</span>
             </li>
           </ul>
-          <p className="note">Перед публикацией замените демонстрационные телефон и email на реальные контакты.</p>
         </section>
         <section className="panel info-card">
           <h2>Что можно обсудить</h2>

@@ -50,11 +50,26 @@ async function main() {
     }
   }
 
+  
   for (const file of files) {
+    const relativePath = path.relative(imagesDir, file);
+    const backupPath = path.join(backupDir, relativePath);
+
+    // Если оригинал уже сохранён в резервной папке,
+    // значит, фотография уже обрабатывалась.
+    try {
+      await fs.access(backupPath);
+      console.log(`Пропуск (уже обработан): ${relativePath}`);
+      continue;
+    } catch (error) {
+      if (error.code !== 'ENOENT') {
+        throw error;
+      }
+    }
+
     const before = (await fs.stat(file)).size;
 
     const image = sharp(file, { failOn: 'error' });
-    const metadata = await image.metadata();
 
     await image
       .rotate()
@@ -78,12 +93,13 @@ async function main() {
       : '0';
 
     console.log(
-      `${path.relative(imagesDir, file)}: ` +
+      `${relativePath}: ` +
       `${(before / 1024 / 1024).toFixed(2)} → ` +
       `${(after / 1024 / 1024).toFixed(2)} МБ ` +
       `(экономия ${saved}%)`
     );
   }
+
 
   console.log(`\nОбработано файлов: ${files.length}`);
   console.log(`Резервная копия: ${backupDir}`);
