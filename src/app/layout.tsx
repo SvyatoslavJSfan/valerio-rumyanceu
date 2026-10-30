@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     template: `%s | ${site.name}`,
   },
   description: site.description,
-  metadataBase: new URL('https://example.com'), // Замените на домен сайта после его появления
+  metadataBase: new URL('https://valerio-rumyanceu.ru'), // Замените на домен сайта после его появления
   openGraph: {
     title: `${site.name} — изделия из дерева`,
     description: site.description,

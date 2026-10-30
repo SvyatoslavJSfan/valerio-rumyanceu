@@ -3,7 +3,7 @@ import { allProducts } from '@/data/products';
 
 export const dynamic = 'force-static';
 
-const baseUrl = 'https://example.com'; // Позже замени на свой домен
+const baseUrl = 'https://valerio-rumyanceu.ru';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const pages: MetadataRoute.Sitemap = [
@@ -27,6 +27,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'yearly',
       priority: 0.6,
     },
+    {
+      url: `${baseUrl}/mebel-na-zakaz/`,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+   {
+      url: `${baseUrl}/derevyannye-balki/`,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+   },
+   {
+      url: `${baseUrl}/nashi-raboty/`,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+   },
   ];
 
   const productPages: MetadataRoute.Sitemap = allProducts.map(
