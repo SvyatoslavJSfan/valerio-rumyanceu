@@ -44,6 +44,15 @@ export const products: Product[] = [
     description: 'Изготовление шкафа в стиле loft.',
     details: ['Стиль loft и сочетание фактур.', 'Размеры и внутреннее наполнение обсуждаются индивидуально.'],
   },
+    {
+    slug: 'shkaf-universalnyi',
+    title: 'Шкаф универсальный',
+    category: 'furniture',
+    image: '/images/furniture/cabinet/cabinet.jpeg',
+    images: [],
+    description: 'Изготовление шкафа в стиле loft.',
+    details: ['Стиль loft и сочетание фактур.', 'Размеры и внутреннее наполнение обсуждаются индивидуально.'],
+  },
   {
     slug: 'stol-dlya-posidelok',
     title: 'Стол для посиделок',
@@ -207,7 +216,7 @@ export const timberProducts: Product[] = [
     '/images/timber/balka4.jpg',
     '/images/timber/balka5.jpg'
   ],
-    description: 'Распил древесины на балки и пиломатериалы. Наличие, сечение и длину необходимо уточнять.',
+    description: 'Изготовление декоративных балок и комплектующих к ним.',
     details: ['Возможен распил по согласованным размерам.', 'Породу древесины, сечение, длину и объём уточняйте заранее.'],
   },
 ];
